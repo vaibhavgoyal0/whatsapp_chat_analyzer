@@ -7,4 +7,3 @@ numpy
 python-louvain
 wordcloud
 emoji_data_python
-re
