@@ -1,0 +1,14 @@
+streamlit
+seaborn
+matplotlib
+pandas
+emoji
+numpy
+nltk
+networkx
+python-louvain
+wordcloud
+textblob
+googletrans
+emoji_data_python
+re
