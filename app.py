@@ -2,11 +2,11 @@ import streamlit as st
 
 import preprocessor
 
-st.title("Whatsapp Chat Analyzer")
+st.title("Chat Forensic")
 
 st.write("Click on arrow in top left to upload your chats")
 
-st.sidebar.title("Whatsapp Chat Analyzer")
+st.sidebar.title("Chat Forensic")
 uploaded_file = st.sidebar.file_uploader("Choose a file")
 
 if uploaded_file is not None:
