@@ -647,7 +647,7 @@ if uploaded_file is not None:
     plt.xticks(rotation=45)
     st.pyplot(fig)
 
-st.title("10. THREE METHODS FOR IDENTIFYING SPAM MESSAGES IN GROUP CHAT")
+    st.title("10. THREE METHODS FOR IDENTIFYING SPAM MESSAGES IN GROUP CHAT")
 
     import pandas as pd
 
