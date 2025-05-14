@@ -1275,12 +1275,15 @@ if uploaded_file is not None:
 
     # Function to translate messages from one language to another
     def translate_messages(messages, source_lang, target_lang):
-    translator = Translator()
-    translated_messages = []
-    for message in messages:
-        translation = translator.translate(message,src=source_lang, dest=target_lang)
-        translated_messages.append(translation)
-     return translated_messages  # Extra space or tab here causes the error
+        translator = Translator()
+        translated_messages = []
+        for message in messages:
+            try:
+                translation = translator.translate(message, src=source_lang, dest=target_lang)
+                translated_messages.append(translation.text)
+            except Exception as e:
+                translated_messages.append(f"Translation error: {e}")
+        return translated_messages
 
 
     # Set the source and target languages for translation
