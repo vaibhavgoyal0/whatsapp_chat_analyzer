@@ -899,13 +899,6 @@ if uploaded_file is not None:
     from nltk.sentiment import SentimentIntensityAnalyzer
     from nltk.corpus import sentiwordnet as swn
 
-    # Download necessary resources for NLTK
-    nltk.download('vader_lexicon')
-    nltk.download('sentiwordnet')
-    nltk.download('wordnet')
-    nltk.download('punkt')
-
-
     # Sentiment analysis with VADER
     def analyze_sentiment_vader(sentence):
         sia = SentimentIntensityAnalyzer()
@@ -1001,10 +994,6 @@ if uploaded_file is not None:
     from textblob import TextBlob
     import streamlit as st
 
-    # Download necessary resources for NLTK
-    nltk.download('vader_lexicon')
-    nltk.download('sentiwordnet')
-
 
     # Function to perform sentiment analysis with TextBlob
     def analyze_sentiment_textblob(sentence):
@@ -1047,10 +1036,6 @@ if uploaded_file is not None:
     from nltk.corpus import sentiwordnet as swn
     from textblob import TextBlob
     import nltk
-
-    # Download necessary resources for NLTK
-    nltk.download('vader_lexicon')
-    nltk.download('sentiwordnet')
 
 
     # Function to perform sentiment analysis with VADER
@@ -1289,13 +1274,16 @@ if uploaded_file is not None:
 
 
     # Function to translate messages from one language to another
-    def translate_messages(messages, source_lang, target_lang):
-        translator = Translator()
-        translated_messages = []
-        for message in messages:
-            translation = translator.translate(message,src=source_lang, dest=target_lang)
-            translated_messages.append(translation)
-        return translated_messages
+   def translate_messages(messages, source_lang, target_lang):
+    translator = Translator()
+    translated_messages = []
+    for message in messages:
+        try:
+            translation = translator.translate(message, src=source_lang, dest=target_lang)
+            translated_messages.append(translation.text)
+        except Exception as e:
+            translated_messages.append(f"Translation error: {e}")
+    return translated_messages
 
 
     # Set the source and target languages for translation
