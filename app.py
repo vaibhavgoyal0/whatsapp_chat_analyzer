@@ -1,4 +1,15 @@
+import nltk
 import streamlit as st
+
+# Download NLTK resources
+try:
+    nltk.download('punkt_tab', quiet=True)
+    nltk.download('vader_lexicon', quiet=True)
+    nltk.download('sentiwordnet', quiet=True)
+    nltk.download('wordnet', quiet=True)
+    nltk.download('punkt', quiet=True)
+except Exception as e:
+    st.error(f"Error downloading NLTK resources: {e}")
 
 import preprocessor
 
