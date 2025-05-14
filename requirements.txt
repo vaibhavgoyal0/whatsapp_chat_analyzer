@@ -9,5 +9,5 @@ networkx
 python-louvain
 wordcloud
 textblob
-googletrans
+googletrans==4.0.0-rc1
 emoji_data_python
